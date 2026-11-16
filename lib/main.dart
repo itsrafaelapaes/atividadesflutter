@@ -1,9 +1,12 @@
+
 import 'package:flutter/material.dart';
 import 'screens/configuracoes_screen.dart';
+import 'screens/tarefas_screen.dart';
 import 'services/preferences_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   final service = PreferencesService();
   final modoEscuroInicial = await service.obterModoEscuro();
 
@@ -36,14 +39,19 @@ class _MeuAppState extends State<MeuApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Aula 12 - SharedPreferences',
+      title: 'Gerenciador de Tarefas',
       themeMode: _modoEscuro ? ThemeMode.dark : ThemeMode.light,
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.indigo,
       ),
       darkTheme: ThemeData.dark(useMaterial3: true),
-      home: ConfiguracoesScreen(onTemaAlterado: _alternarTema),
+      home: const TarefasScreen(),
+      routes: {
+        '/configuracoes': (context) => ConfiguracoesScreen(
+              onTemaAlterado: _alternarTema,
+            ),
+      },
     );
   }
 }

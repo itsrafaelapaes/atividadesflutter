@@ -1,21 +1,13 @@
-name: pdm_aula12_shared_preferences
-description: "Projeto da Aula 12 - SharedPreferences"
-publish_to: 'none'
-
-version: 1.0.0+1
+name: flutter_application_1
+description: Projeto Flutter - Aula 13
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ^3.13.0
 
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.2.2 # Pacote para salvar dados locais[span_2](start_span)[span_2](end_span)
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
-
-flutter:
-  uses-material-design: true
+  sqflite: ^2.3.2
+  path: ^1.9.0
+  shared_preferences: ^2.2.3
+  sqflite_common_ffi_web: ^1.2.0
